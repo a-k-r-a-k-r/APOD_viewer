@@ -7,7 +7,7 @@ from io import BytesIO
 #Define window
 root = tkinter.Tk()
 root.title('APOD Photo Viewer')
-root.iconbitmap('rocket.ico')
+root.iconbitmap('resources/icons/rocket.ico')
 
 #Define fonts and colors
 text_font = ('Times New Roman', 14)
@@ -24,7 +24,7 @@ def get_request():
 
     #Set the parameters for the request
     url = 'https://api.nasa.gov/planetary/apod'
-    api_key = 'DEMO_KEY' #USE YOUR OWN API KEY!!!!
+    api_key = 'DEMO_KEY' #CHANGE IT WITH YOUR OWN API KEY
     date = calander.get_date()
     querystring = {'api_key':api_key, 'date':date}
 
@@ -95,7 +95,7 @@ def full_photo():
     """Open the full size photo in a new window"""
     top = tkinter.Toplevel()
     top.title('Full APOD Photo')
-    top.iconbitmap('rocket.ico')
+    top.iconbitmap('resources/icons/rocket.ico')
 
     #Load the full image to the top window
     img_label = tkinter.Label(top, image=full_img)
